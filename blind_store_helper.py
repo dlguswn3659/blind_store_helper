@@ -1,58 +1,58 @@
-# def run_quickstart(file_name):
-#     import io
-#     import os
+def run_quickstart(file_name):
+    import io
+    import os
 
-#     # 구글 라이브러리 import
-#     from google.cloud import vision
-#     from google.cloud.vision import types
+    # 구글 라이브러리 import
+    from google.cloud import vision
+    from google.cloud.vision_v1 import types
 
-#     # 사용할 클라이언트 설정
-#     client = vision.ImageAnnotatorClient()
+    # 사용할 클라이언트 설정
+    client = vision.ImageAnnotatorClient()
 
-#     # 이미지 읽기
-#     with io.open(file_name, 'rb') as image_file:
-#         content = image_file.read()
+    # 이미지 읽기
+    with io.open(file_name, 'rb') as image_file:
+        content = image_file.read()
 
-#     image = types.Image(content=content)
+    image = types.Image(content=content)
 
-#     # label 뽑아냄.
-#     response = client.label_detection(image=image)
-#     labels = response.label_annotations
+    # label 뽑아냄.
+    response = client.label_detection(image=image)
+    labels = response.label_annotations
 
-#     print('Labels:')
-#     for label in labels:
-#         print(label.description + " = " + str(int(label.score*100)) + "%")
-
-
-# if __name__ == '__main__':
-#     run_quickstart("whale_bob.jpg")
+    print('Labels:')
+    for label in labels:
+        print(label.description + " = " + str(int(label.score*100)) + "%")
 
 
-import io
-import os
+if __name__ == '__main__':
+    run_quickstart("whale_bob.jpg")
 
-# Imports the Google Cloud client library
-from google.cloud import vision
+###########################################################
+# import io
+# import os
 
-# Instantiates a client
-client = vision.ImageAnnotatorClient()
+# # Imports the Google Cloud client library
+# from google.cloud import vision
 
-# The name of the image file to annotate
-file_name = os.path.abspath('whale_bob.jpg')
+# # Instantiates a client
+# client = vision.ImageAnnotatorClient()
 
-# Loads the image into memory
-with io.open(file_name, 'rb') as image_file:
-    content = image_file.read()
+# # The name of the image file to annotate
+# file_name = os.path.abspath('whale_bob.jpg')
 
-image = vision.Image(content=content)
+# # Loads the image into memory
+# with io.open(file_name, 'rb') as image_file:
+#     content = image_file.read()
 
-# Performs label detection on the image file
-response = client.label_detection(image=image)
-labels = response.label_annotations
+# image = vision.Image(content=content)
 
-print('Labels:')
-for label in labels:
-    print(label.description)
+# # Performs label detection on the image file
+# response = client.label_detection(image=image)
+# labels = response.label_annotations
+
+# print('Labels:')
+# for label in labels:
+#     print(label.description)
 
 #################################################
 
