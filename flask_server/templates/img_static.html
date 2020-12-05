@@ -1,11 +1,67 @@
 <!doctype html>
 <html>
   <head>
+
+    <style type="text/css">
+    titleBlock {
+      font-size: 80px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 50px;
+    }
+
+    resultBlock {
+      font-size: 30px;
+      font-weight: 500;
+      color: black;
+    }
+
+    blankLine {
+      width: 100%;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+      font-size: 40px;
+    }
+
+    resultTitle {
+      font-size: 60px;
+      font-weight: 600;
+      margin: 50px;
+    }
+
+    textBlock {
+      margin: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    </style>
+
   </head>
   <body>
     {% if True %}
-    <img src="{{ url_for('static', filename=image_file)  }}">
-    <div>하랄랄랄ㄹ</div>
+    <blankLine></blankLine>
+    <titleBlock>
+      블라인드 편의점도우미
+    </titleBlock>
+    <blankLine></blankLine>
+    <img src="{{ url_for('static', filename=image_file)  }}" style="display: block; margin: 0 auto; width: 300px; object-fit: cover;">
+    <blankLine></blankLine>
+    <resultTitle>
+      Object Detection Result
+    </resultTitle>
+    <blankLine></blankLine>
+    <textBlock>
+      <resultBlock>
+        RESULT : {{result}}<br/>
+      </resultBlock>
+    </textBlock>
     {% endif %}
   </body>
 </html>

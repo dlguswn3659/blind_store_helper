@@ -39,10 +39,25 @@ if __name__ == '__main__':
     run_quickstart("whale_bob.jpg")
 
 
-@app.route("/")
-def hello():
+@app.route("/result")
+def result():
     if __name__ == '__main__':
-        run_quickstart("whale_bob.jpg")
+        run_quickstart("./static/images/whale_bob.jpg")
 
-    return render_template('img_static.html', image_file="whale_bob.jpg")
+    return render_template('img_static.html', image_file='images/whale_bob.jpg', result=run_quickstart("./static/images/whale_bob.jpg"))
     # return run_quickstart("whale_bob.jpg")
+
+
+@app.route("/")
+def home():
+    if __name__ == '__main__':
+        run_quickstart("./static/images/whale_bob.jpg")
+
+    return run_quickstart("./static/images/whale_bob.jpg")
+    # return run_quickstart("whale_bob.jpg")
+
+
+if __name__ == '__main__':
+    # app.run(debug=True, host='192.168.0.8')
+    app.debug = True
+    app.run(host="0.0.0.0", debug=True)
