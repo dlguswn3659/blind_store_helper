@@ -340,11 +340,12 @@ result_dict = get_similar_products_file(
 
 ######
 
-image_url = max(result_dict.keys(), key=(lambda k: result_dict[k]))
-print("가장 유사한 이미지 파일 경로: {}", format(image_url))
 
-model_name = image_url.split("/")[-1]   # 생성되는 image_url 마지막이 모델명으로 담김
-print("가장 유사한 모델: {}", format(model_name))
+# image_url = max(result_dict.keys(), key=(lambda k: result_dict[k]))
+# print("가장 유사한 이미지 파일 경로: {}", format(image_url))
+
+# model_name = image_url.split("/")[-1]   # 생성되는 image_url 마지막이 모델명으로 담김
+# print("가장 유사한 모델: {}", format(model_name))
 
 
 if __name__ == '__main__':
