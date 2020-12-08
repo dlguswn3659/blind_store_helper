@@ -173,8 +173,7 @@ def import_product_sets(project_id, location, gcs_uri):
 
 
 ### 제품 및 세트 생성 ###
-import_product_sets('analog-primer-297615', 'us-east1',
-                    'gs://blind_store_helper2/item_data.csv')
+import_product_sets('analog-primer-297615', 'us-east1','gs://blind_store_helper2/item_data.csv')
 
 ### 제품 등록 확인 ###
 
@@ -351,6 +350,7 @@ result_dict = get_similar_products_file(
 if __name__ == '__main__':
     logging.error(blobs)
     run_quickstart("whale_bob.jpg")
+    logging.error('pass the run quickstart')
 
 
 @ app.route("/result")
