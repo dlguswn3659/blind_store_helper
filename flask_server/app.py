@@ -17,7 +17,6 @@ app = Flask(__name__)
 
 client = vision.ImageAnnotatorClient()
 
-
 def run_quickstart(file_name):
     import io
     import os
