@@ -379,4 +379,5 @@ def home():
 if __name__ == '__main__':
     # app.run(debug=True, host='192.168.0.8')
     app.debug = True
+    #app.debug = False
     app.run(host="0.0.0.0", debug=True)
